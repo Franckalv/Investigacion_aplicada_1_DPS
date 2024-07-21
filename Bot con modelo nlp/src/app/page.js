@@ -17,29 +17,31 @@ export default function ChatPage() {
 
     if (!newMessage.trim()) return; // Prevent sending empty messages
 
-    setIsLoading(true); // Show loading indicator
-    setError(null); // Clear any previous errors
+setIsLoading(true); // Show loading indicator
+setError(null); // Clear any previous errors
 
-    try {
-      const dialogflowResponse = await axios.post('/api/dialogflow.js', {
-        message: newMessage,
-      });
+try {
+  // Asumiendo que tienes un nuevo endpoint '/api/natural' que usa tu modelo de Natural
+  const naturalResponse = await axios.post('http://localhost:3000/api/natural', {
+    message: newMessage,
+  });
 
-      const botMessage = { text: dialogflowResponse.data.reply, sender: 'bot' };
-      setMessages([...messages, { text: newMessage, sender: 'user' }, botMessage]);
-      setNewMessage(''); // Clear input field
-    } catch (err) {
-      console.error('Error sending message:', err);
-      setError('Error al enviar el mensaje');
-    } finally {
-      setIsLoading(false); // Hide loading indicator
-    }
-  };
+  // Asegúrate de que esta línea refleje cómo tu nuevo endpoint estructura la respuesta
+  const botMessage = { text: naturalResponse.data.classification, sender: 'bot' };
+  setMessages([...messages, { text: newMessage, sender: 'user' }, botMessage]);
+  setNewMessage(''); // Clear input field
+} catch (err) {
+  console.error('Error sending message:', err);
+  setError('Error al enviar el mensaje');
+} finally {
+  setIsLoading(false); // Hide loading indicator
+}
+};
 
-  // Function to fetch initial messages (optional)
-  useEffect(() => {
-    // Fetch initial messages from server or API (if needed)
-  }, []);
+// Function to fetch initial messages (optional)
+useEffect(() => {
+// Fetch initial messages from server or API (if needed)
+}, []);
 
   return (
     <div className={styles.container}>
