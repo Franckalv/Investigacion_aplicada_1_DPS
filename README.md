@@ -4,14 +4,18 @@ Investigación aplicada 1 para la materia de DPS en la UDB.
 
 ## Tabla de Contenidos
 
+- [Equipo](#equipo)
 - [Descripción](#descripción)
 - [Características](#características)
 - [Instalación](#instalación)
 - [Uso](#uso)
-- [Contribuir](#contribuir)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
-- [Créditos](#créditos)
+
+## Equipo
+- Alfaro Hernández, Cristian Alexander AH211671
+- Sandoval Barrera, Francisco Alfonso SB200814
+- Rivas Hidalgo, Benjamin Enrique RH190164
+- Moreno Lozano, Cruz Enrique ML210800
+- Zaldaña Álvarez, Francisco Javier ZA210751
 
 ## Descripción
 
