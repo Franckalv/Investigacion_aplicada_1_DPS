@@ -56,10 +56,6 @@ Se crearon dos chatbots, uno haciendo uso de una api y otro del modulo de natura
     ```sh
     npm install
     ```
-    o
-    ```sh
-    pip install -r requirements.txt
-    ```
 
 ## Uso
 ### Si haras uso del chatbot con el NLP
