@@ -1,0 +1,17 @@
+{
+  "name": "modelo",
+  "version": "1.0.0",
+  "description": "modelo de nlp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "modelo"
+  ],
+  "author": "Cruz Moreno",
+  "license": "ISC",
+  "dependencies": {
+    "natural": "^7.1.0"
+  }
+}
