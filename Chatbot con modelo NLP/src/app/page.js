@@ -26,8 +26,16 @@ try {
     message: newMessage,
   });
 
+  // Convertir los saltos de línea en <br /> para HTML o elementos de React
+  const botMessageText = naturalResponse.data.reply.split('\n').map((item, index) => (
+    <React.Fragment key={index}>
+      {item}
+      <br />
+    </React.Fragment>
+  ));
+
   // Asegúrate de que esta línea refleje cómo tu nuevo endpoint estructura la respuesta
-  const botMessage = { text: naturalResponse.data.classification, sender: 'bot' };
+  const botMessage = { text: botMessageText, sender: 'bot' };
   setMessages([...messages, { text: newMessage, sender: 'user' }, botMessage]);
   setNewMessage(''); // Clear input field
 } catch (err) {
@@ -46,7 +54,9 @@ useEffect(() => {
   return (
     <div className={styles.container}>
       {error && <div className={styles.errorMessage}>{error}</div>}
-
+      <div className={styles.botAvatar}>
+        <h2>Chatbot UDB</h2>
+      </div>
       <div className={styles.messagesContainer}>
         {messages.map((msg, index) => (
           <div key={index} className={msg.sender === 'user' ? styles.userMessage : styles.botMessage}>
